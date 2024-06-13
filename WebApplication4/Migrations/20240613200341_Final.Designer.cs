@@ -12,7 +12,7 @@ using WebApplication4.Context;
 namespace WebApplication4.Migrations
 {
     [DbContext(typeof(Apbd10Context))]
-    [Migration("20240613181757_Final")]
+    [Migration("20240613200341_Final")]
     partial class Final
     {
         /// <inheritdoc />
@@ -51,6 +51,22 @@ namespace WebApplication4.Migrations
                     b.HasKey("IdDoctor");
 
                     b.ToTable("Doctors");
+
+                    b.HasData(
+                        new
+                        {
+                            IdDoctor = 1,
+                            Email = "Drychyts.lekarz@example.com",
+                            FirstName = "Nikita",
+                            LastName = "Drychyts"
+                        },
+                        new
+                        {
+                            IdDoctor = 2,
+                            Email = "Drychyts.lekarka@example.com",
+                            FirstName = "Chel",
+                            LastName = "Drychyts"
+                        });
                 });
 
             modelBuilder.Entity("WebApplication4.Models.Medicament", b =>
@@ -79,6 +95,22 @@ namespace WebApplication4.Migrations
                     b.HasKey("IdMedicament");
 
                     b.ToTable("Medicaments");
+
+                    b.HasData(
+                        new
+                        {
+                            IdMedicament = 2,
+                            Description = "Lek przeciwbólowy",
+                            Name = "Paracetamol",
+                            Type = "Tabletka"
+                        },
+                        new
+                        {
+                            IdMedicament = 3,
+                            Description = "Lek przeciwzapalny",
+                            Name = "Ibuprofen",
+                            Type = "Tabletka"
+                        });
                 });
 
             modelBuilder.Entity("WebApplication4.Models.Patient", b =>
@@ -105,6 +137,22 @@ namespace WebApplication4.Migrations
                     b.HasKey("IdPatient");
 
                     b.ToTable("Patients");
+
+                    b.HasData(
+                        new
+                        {
+                            IdPatient = 1,
+                            Birthdate = new DateTime(1980, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "Miron",
+                            LastName = "Drychyts"
+                        },
+                        new
+                        {
+                            IdPatient = 2,
+                            Birthdate = new DateTime(1990, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "Ivan",
+                            LastName = "Drychyts"
+                        });
                 });
 
             modelBuilder.Entity("WebApplication4.Models.Prescription", b =>

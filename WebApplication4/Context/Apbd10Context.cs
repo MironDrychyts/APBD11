@@ -32,25 +32,25 @@ public class Apbd10Context : DbContext
         modelBuilder.Entity<Prescription_Medicament>()
             .HasKey(pm => new { pm.IdMedicament, pm.IdPrescription });
         
-        /*
+        
         modelBuilder.Entity<Patient>().HasData(new List<Patient>
         {
-            new Patient {  FirstName = "Jan", LastName = "Kowalski", Birthdate = new DateTime(1980, 1, 1) },
-            new Patient {  FirstName = "Anna", LastName = "Nowak", Birthdate = new DateTime(1990, 2, 2) }
+            new Patient {IdPatient  = 1, FirstName = "Miron", LastName = "Drychyts", Birthdate = new DateTime(1980, 1, 1) },
+            new Patient {IdPatient  = 2, FirstName = "Ivan", LastName = "Drychyts", Birthdate = new DateTime(1990, 2, 2) }
         });
 
         modelBuilder.Entity<Doctor>().HasData(new List<Doctor>
         {
-            new Doctor {  FirstName = "Adam", LastName = "Lekarz", Email = "adam.lekarz@example.com" },
-            new Doctor {  FirstName = "Ewa", LastName = "Lekarka", Email = "ewa.lekarka@example.com" }
+            new Doctor {IdDoctor  = 1, FirstName = "Nikita", LastName = "Drychyts", Email = "Drychyts.lekarz@example.com" },
+            new Doctor {IdDoctor  = 2, FirstName = "Chel", LastName = "Drychyts", Email = "Drychyts.lekarka@example.com" }
         });
 
         modelBuilder.Entity<Medicament>().HasData(new List<Medicament>
         {
-            new Medicament {  Name = "Paracetamol", Description = "Lek przeciwbólowy", Type = "Tabletka" },
-            new Medicament {  Name = "Ibuprofen", Description = "Lek przeciwzapalny", Type = "Tabletka" }
+            new Medicament {IdMedicament  = 2, Name = "Paracetamol", Description = "Lek przeciwbólowy", Type = "Tabletka" },
+            new Medicament {IdMedicament  = 3, Name = "Ibuprofen", Description = "Lek przeciwzapalny", Type = "Tabletka" }
         });
-        */
+        
         
     }
 }
