@@ -25,6 +25,8 @@ public class Apbd10Context : DbContext
     
     public DbSet<Prescription_Medicament> PrescriptionMedicaments { get; set; }
     
+    public DbSet<User> Users { get; set; }
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         

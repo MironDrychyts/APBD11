@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using WebApplication4.Context;
+using WebApplication4.MiddleWares;
 using WebApplication4.Repositories;
 
 public class Program
@@ -20,7 +21,7 @@ public class Program
         });
         builder.Services.AddScoped<IPrescriptionRepository, PrescriptionRepository>();
         builder.Services.AddDbContext<Apbd10Context>(options => 
-            options.UseSqlServer("Name=ConnectionStrings:DefaultConnection"));
+            options.UseSqlServer("Name=ConnectionStrings:Default"));
 
         builder.Services.AddAuthentication(options =>
         {
